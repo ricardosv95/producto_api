@@ -13,22 +13,22 @@ public class ProductoServiceImpl implements ProductoService {
     @Autowired
     private ProductoRepository productoRepository;
 
-    //@Override
+    @Override
     public List<Producto> obtenerTodos(){
         return productoRepository.findAll();
     }
 
-    //@Override
+    @Override
     public Producto guardar(Producto producto){
         return productoRepository.save(producto);
     }
 
-    //@Override
+    @Override
     public Producto buscarPorId(Long id){
         return productoRepository.findById(id).orElseThrow(() -> new RuntimeException("Producto no encontrado"));
     }
 
-    //@Override
+    @Override
     public void eliminar(Long id){
         productoRepository.deleteById(id);
     }
